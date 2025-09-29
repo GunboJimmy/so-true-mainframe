@@ -12,7 +12,7 @@ client.once('ready', () => {
 client.on('messageCreate', (message) => {
     const username = message.author.username;
     const trigger = /is\s*this\s*true/i;
-    if (trigger.test(message.content)) {
+    if (trigger.test(message.content) && message.mentions.has(client.user)) {
       let roll = Math.floor(Math.random() * 10000) + 1;
       if (roll == 1) {
         message.reply("# 〓𝗜𝗗𝗞 𝗟𝗠𝗔𝗢〓 ");
